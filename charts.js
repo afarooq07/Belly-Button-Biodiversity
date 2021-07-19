@@ -87,29 +87,35 @@ function buildCharts(sample) {
 
 
     // 8. Create the trace for the bar chart. 
-    //var barData = [
-    //];
-    var barData = {
+    var barData = [{
       x: topTenSamplesValues,
       y: yticks,
       orientation: 'h',
       type: "bar",
-      hovertemplate: topTenSamplesLabels,
-     };
-    //var data = [barData];
+      template: "seaborn",
+      marker: {
+        color: 'rgb(142,124,195)',
+        opacity: 0.6,
+        line: {
+          color: 'rgb(8,48,107)',
+          width: 1.5
+        }
+      },
+      hovertemplate: topTenSamplesLabels 
+     }];
    
     // 9. Create the layout for the bar chart.     
-    var layout = {
+    var barLayout = {
+       plot_bgcolor:'rgb(244, 246, 246)',
        title: "Top 10 Bacteria Cultures Found",
-       yaxis: {autorange:'reversed'}     
+       yaxis: {autorange:'reversed'}  
     };
      
-    //};
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", [barData], layout);
+    Plotly.newPlot("bar", barData, barLayout);
 
     // 1. Create the trace for the bubble chart.
-    var bubbleData = {
+    var bubbleData = [{
       x: otu_ids,
       y: sample_values,
       mode: 'markers',
@@ -117,17 +123,18 @@ function buildCharts(sample) {
       marker: {
         size: sample_values,
         color: otu_ids }
-    };
+    }];
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
+      plot_bgcolor:'rgb(244, 246, 246)',
       title: "Bacteria Cultures Per Sample",
       xaxis: { title: "OTU ID"},
       showlegend: false
     };
 
     // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot("bubble", [bubbleData], bubbleLayout); 
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
 
     // 4. Create the trace for the gauge chart.
     var md = data.metadata;
@@ -168,8 +175,9 @@ function buildCharts(sample) {
                     //width: 400,
                     //height: 300,
                     margin: { t: 0, b: 0 },
+                    paper_bgcolor: "#F4F6F6",
                    // margin: { t: 25, r: 25, l: 25, b: 25 },
-                    font: { color: "darkblue", family: "Arial" } ,
+                    font: { color: "darkblue", family: "Arial" }
                   };
 
 

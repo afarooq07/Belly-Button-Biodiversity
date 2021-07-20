@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+<!--
+<style>
+  div.col-md-5 {border: 1px solid black;} 
+  div.col-md-12 {border: 1px solid black;}
+  body {background-color: #E6E6FA;}
+</style>
+-->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,9 +17,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
 
-<body>
+<body style="background-color:rgb(229, 233, 233);">
 
   <div class="container">
+
     <div class="row">
       <div class="col-md-12 jumbotron text-center" style="background-image: url(https://st3.depositphotos.com/3944627/18616/i/1600/depositphotos_186162608-stock-photo-science-laboratory-test-tubes-with.jpg); background-size: 100%;">
         <h1>Belly Button Biodiversity Dashboard</h1>
@@ -19,8 +28,9 @@
       </div>
     </div>
     <div class="row">
+
       <div class="col-md-2">
-        <div class="well">
+        <div class="well" style="background-color: rgb(251, 252, 252);">
           <h5>Test Subject ID No.:</h5>
           <!-- <select id="selDataset"></select> -->
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
@@ -32,18 +42,34 @@
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
+
       <div class="col-md-5">
-        <div id="bar"x></div>
+        <div id="bar"></div>
       </div>
+
       <div class="col-md-5">
         <div id="gauge" ></div>
       </div>
     </div>
-    <div class="row"></div>
+  
+    <div class="row" style=" height: 20px; width: 100%; margin-top: 10px;">
+      <div class="col-md-12">
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-md-12">
         <div id="bubble"></div>
       </div>
     </div>
+
+    <div class="row" style=" height: 50px; width: 100%; margin-top: 10px;">
+      <div class="col-md-12">
+      </div>
+    </div>
+
+    </div>
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>

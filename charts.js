@@ -130,7 +130,6 @@ function buildCharts(sample) {
       plot_bgcolor:'rgb(244, 246, 246)',
       title: "Bacteria Cultures Per Sample",
       xaxis: { title: "OTU ID"},
-      showlegend: false
     };
 
     // 3. Use Plotly to plot the data with the layout.
@@ -175,7 +174,7 @@ function buildCharts(sample) {
                     //width: 400,
                     //height: 300,
                     margin: { t: 0, b: 0 },
-                    paper_bgcolor: "#F4F6F6",
+                   // paper_bgcolor: "#F4F6F6",
                    // margin: { t: 25, r: 25, l: 25, b: 25 },
                     font: { color: "darkblue", family: "Arial" }
                   };
